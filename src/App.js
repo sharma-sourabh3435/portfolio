@@ -1,7 +1,7 @@
 import './App.css';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import './protection.js';
+// import './protection.js';
 import { useState, useEffect } from 'react';
 
 function App() {
