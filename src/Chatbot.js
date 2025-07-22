@@ -16,6 +16,7 @@ const Chatbot = () => {
   const messagesEndRef = useRef(null);
 
   // Knowledge base based on resume data
+  /*
   const knowledgeBase = {
     experience: {
       current: {
@@ -75,7 +76,7 @@ const Chatbot = () => {
       linkedin: "https://www.linkedin.com/in/-sourabh-/",
       substack: "https://sourabh3435.substack.com/"
     }
-  };
+  }; */
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
