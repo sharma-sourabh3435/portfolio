@@ -4,11 +4,14 @@
   --bg-alt: #f8f9fa;
   --text-color: #333333;
   --text-secondary: #666666;
+  --text-light: #888888;
   --nav-bg: #ffffff;
   --nav-shadow: rgba(0, 0, 0, 0.1);
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --border-color: #e0e0e0;
+  --accent-color: #BF9B9F;
+  --accent-hover: #a68a8d;
 }
 
 [data-theme="dark"] {
@@ -16,11 +19,14 @@
   --bg-alt: #1f1f1f;
   --text-color: #ffffff;
   --text-secondary: #cccccc;
+  --text-light: #888888;
   --nav-bg: #2d2d2d;
   --nav-shadow: rgba(0, 0, 0, 0.3);
   --card-bg: #2d2d2d;
   --card-shadow: rgba(0, 0, 0, 0.3);
   --border-color: #404040;
+  --accent-color: #BF9B9F;
+  --accent-hover: #a68a8d;
 }
 
 /* Apply theme to body and html */

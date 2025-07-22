@@ -1,6 +1,7 @@
 import './App.css';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import Chatbot from './Chatbot';
 // import './protection.js';
 import { useState, useEffect } from 'react';
 
@@ -219,6 +220,7 @@ function App() {
       </main>
       
       <Footer />
+      <Chatbot />
     </div>
   );
 }
