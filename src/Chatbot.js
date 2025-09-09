@@ -3,7 +3,7 @@ import './Chatbot.css';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
+  // const [showWelcome, setShowWelcome] = useState(false);
   const [messages, setMessages] = useState([
     {
       type: 'bot',
@@ -87,18 +87,18 @@ const Chatbot = () => {
   }, [messages]);
 
   // Show welcome message after page loads
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowWelcome(true);
-      const welcomeTimer = setTimeout(() => {
-        setShowWelcome(false);
-      }, 4000); // Show for 4 seconds
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowWelcome(true);
+  //     const welcomeTimer = setTimeout(() => {
+  //       setShowWelcome(false);
+  //     }, 4000); // Show for 4 seconds
       
-      return () => clearTimeout(welcomeTimer);
-    }, 2000); // Show after 2 seconds
+  //     return () => clearTimeout(welcomeTimer);
+  //   }, 2000); // Show after 2 seconds
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const generateResponse = (userMessage) => {
     const message = userMessage.toLowerCase();
