@@ -236,16 +236,6 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Welcome Message */}
-      {showWelcome && (
-        <div className="welcome-message">
-          <div className="welcome-content">
-            👋 Want to know more about Sourabh? 
-            <br />Click the chat button to ask me anything!
-          </div>
-        </div>
-      )}
-
       {/* Chat Toggle Button */}
       <div 
         className={`chat-toggle ${isOpen ? 'open' : ''}`}

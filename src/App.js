@@ -19,6 +19,22 @@ function App() {
     window.addEventListener('scroll', updateScrollProgress);
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
+
+  const scrollProjects = (direction) => {
+    const container = document.querySelector('.projects-scroll-container');
+    const scrollAmount = 400; // Adjust this value to control scroll distance
+    
+    if (container) {
+      const scrollLeft = direction === 'left' 
+        ? container.scrollLeft - scrollAmount 
+        : container.scrollLeft + scrollAmount;
+      
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
   const resume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/view?usp=drive_link";
   const iFrameResume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/preview";
 
@@ -62,10 +78,10 @@ function App() {
               </div>
               <div className="about-right">
                 <div className="about-text">
-                  <p>Hi, I'm a passionate software developer who loves math, distributed systems, and building scalable applications. 
-                  I love working with modern technologies and enjoy solving complex problems.</p>
+                  <p>Hi, I'm a  software developer who likes math, distributed systems, and building scalable applications. 
+                  I enjoy working with modern technologies and solving complex problems.</p>
                   <p>
-                    Outside of tech, I'm usually exploring recipes or hiking trails.
+                    Outside of tech, I like to try recipes or hiking trails.
                     <span className="cooking-animation">
                       <span className="pan">🍳</span>
                       <span className="vegetables">🥕🥬🌶️</span>
@@ -125,65 +141,107 @@ function App() {
         <section id="projects" className="section">
           <div className="container">
             <h2>Projects</h2>
-            <div className="projects-grid">
-              <div className="project-card">
-                <div className="project-header">
-                  <div className="project-title">
-                    <h3>Algorithmic Trader</h3>
-                    <div className="project-tech">
-                      <span>Python</span>
-                      <span>Pandas</span>
-                      <span>Numpy</span>
-                      <span>Keras</span>
-                      <span>TensorFlow</span>
-                      <span>Git</span>
-                      <span>Docker</span>
+            <div className="projects-carousel">
+              <button 
+                className="scroll-btn scroll-btn-left" 
+                onClick={() => scrollProjects('left')}
+                aria-label="Scroll left"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+              </button>
+              
+              <div className="projects-scroll-container">
+                <div className="projects-grid">
+                  <div className="project-card">
+                    <div className="project-header">
+                      <div className="project-title">
+                        <h3>Algorithmic Trader</h3>
+                        <div className="project-tech">
+                          <span>Python</span>
+                          <span>Pandas</span>
+                          <span>Numpy</span>
+                          <span>Keras</span>
+                          <span>TensorFlow</span>
+                          <span>Git</span>
+                          <span>Docker</span>
+                        </div>
+                      </div>
+                      <div className="project-links">
+                        <a 
+                          href="https://github.com/sharma-sourabh3435/ready_trader_go" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          [code]
+                        </a>
+                      </div>
                     </div>
+                    <ul className="project-list">
+                      <li>Leveraged advanced data analysis techniques utilizing Pandas and Numpy, resulting in a 20% boost in predictive accuracy when processing and analyzing large datasets</li>
+                      <li>Utilized Keras and TensorFlow to develop and fine-tune deep learning models, leading to a 15% improvement in pattern recognition accuracy for market trends</li>
+                    </ul>
                   </div>
-                  <div className="project-links">
-                    <a 
-                      href="https://github.com/sharma-sourabh3435/ready_trader_go" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      [code]
-                    </a>
+
+                  <div className="project-card">
+                    <div className="project-header">
+                      <div className="project-title">
+                        <h3>GigsNow</h3>
+                        <div className="project-tech">
+                          <span>Java</span>
+                          <span>Android Studio</span>
+                          <span>Firebase</span>
+                          <span>Git</span>
+                        </div>
+                      </div>
+                      <div className="project-links">
+                        <a 
+                          href="https://github.com/sharma-sourabh3435/Odd-Jobs" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          [code]
+                        </a>
+                      </div>
+                    </div>
+                    <ul className="project-list">
+                      <li>Spearheaded the design and development of 'GigsNow', an Android application in Android Studio using Java, aimed at streamlining job discovery and listings for users</li>
+                      <li>Engineered advanced job searching, posting, and application submission functionalities, resulting in a 30% growth in user engagement and interaction</li>
+                    </ul>
+                  </div>
+
+                  {/* You can add more project cards here */}
+                  <div className="project-card">
+                    <div className="project-header">
+                      <div className="project-title">
+                        <h3>More Projects Coming Soon</h3>
+                        <div className="project-tech">
+                          <span>React</span>
+                          <span>Node.js</span>
+                          <span>AI/ML</span>
+                        </div>
+                      </div>
+                    </div>
+                    <ul className="project-list">
+                      <li>Stay tuned for more exciting projects!</li>
+                      <li>Always working on something new and innovative</li>
+                    </ul>
                   </div>
                 </div>
-                <ul className="project-list">
-                  <li>Leveraged advanced data analysis techniques utilizing Pandas and Numpy, resulting in a 20% boost in predictive accuracy when processing and analyzing large datasets</li>
-                  <li>Utilized Keras and TensorFlow to develop and fine-tune deep learning models, leading to a 15% improvement in pattern recognition accuracy for market trends</li>
-                </ul>
               </div>
 
-              <div className="project-card">
-                <div className="project-header">
-                  <div className="project-title">
-                    <h3>GigsNow</h3>
-                    <div className="project-tech">
-                      <span>Java</span>
-                      <span>Android Studio</span>
-                      <span>Firebase</span>
-                      <span>Git</span>
-                    </div>
-                  </div>
-                  <div className="project-links">
-                    <a 
-                      href="https://github.com/sharma-sourabh3435/Odd-Jobs" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      [code]
-                    </a>
-                  </div>
-                </div>
-                <ul className="project-list">
-                  <li>Spearheaded the design and development of 'GigsNow', an Android application in Android Studio using Java, aimed at streamlining job discovery and listings for users</li>
-                  <li>Engineered advanced job searching, posting, and application submission functionalities, resulting in a 30% growth in user engagement and interaction</li>
-                </ul>
-              </div>
+              <button 
+                className="scroll-btn scroll-btn-right" 
+                onClick={() => scrollProjects('right')}
+                aria-label="Scroll right"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+              </button>
             </div>
           </div>
         </section>

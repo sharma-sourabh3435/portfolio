@@ -21,7 +21,7 @@
 
 .theme-toggle {
   background: none;
-  border: 2px solid #BF9B9F;
+  border: 2px solid var(--accent-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -34,7 +34,7 @@
 }
 
 .theme-toggle:hover {
-  background-color: #BF9B9F;
+  background-color: var(--accent-color);
   transform: scale(1.1);
 }
 
@@ -60,7 +60,7 @@
 }
 
 .nav-logo h2 {
-  color: #BF9B9F;
+  color: var(--accent-color);
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
@@ -79,7 +79,7 @@
 }
 
 .nav-link {
-  color: #BF9B9F;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -90,12 +90,12 @@
 }
 
 .nav-link:hover {
-  color: #A67C7F;
-  background-color: rgba(191, 155, 159, 0.1);
+  color: var(--accent-hover);
+  background-color: var(--accent-light);
 }
 
 .nav-link:active {
-  color: #8F6669;
+  color: var(--accent-hover);
 }
 
 /* Mobile responsiveness */
