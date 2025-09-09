@@ -78,10 +78,12 @@ function App() {
               </div>
               <div className="about-right">
                 <div className="about-text">
-                  <p>Hi, I'm a  software developer who likes math, distributed systems, and building scalable applications. 
-                  I enjoy working with modern technologies and solving complex problems.</p>
+                  <p>Hi, I'm Sourabh (pronounced 'So-rub'). I make software. Currently, my interests
+                    are distributed systems, machine learning, and of course distributed
+                    machine learning systems.
+                  </p>
                   <p>
-                    Outside of tech, I like to try recipes or hiking trails.
+                    Outside of tech, I like to try new recipes or hiking trails.
                     <span className="cooking-animation">
                       <span className="pan">🍳</span>
                       <span className="vegetables">🥕🥬🌶️</span>
