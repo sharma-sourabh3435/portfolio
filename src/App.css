@@ -1,38 +1,38 @@
 /* CSS Custom Properties for Theming */
 :root {
-  --bg-color: #e2e8f0;
-  --bg-alt: #cbd5e0;
-  --text-color: #2d3748;
-  --text-secondary: #4a5568;
-  --text-light: #718096;
-  --nav-bg: #f7fafc;
-  --nav-shadow: rgba(0, 0, 0, 0.08);
-  --card-bg: #f7fafc;
-  --card-shadow: rgba(0, 0, 0, 0.12);
-  --border-color: #d1d5db;
-  --accent-color: #667eea;
-  --accent-hover: #5a67d8;
-  --accent-light: rgba(102, 126, 234, 0.12);
-  --success-color: #48bb78;
-  --warning-color: #ed8936;
+  --bg-color: #f5f0eb;
+  --bg-alt: #ece5de;
+  --text-color: #3d3529;
+  --text-secondary: #5c5347;
+  --text-light: #8a7f72;
+  --nav-bg: #faf7f4;
+  --nav-shadow: rgba(0, 0, 0, 0.06);
+  --card-bg: #faf7f4;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --border-color: #ddd5cc;
+  --accent-color: #7a8f6e;
+  --accent-hover: #6b7f5f;
+  --accent-light: rgba(122, 143, 110, 0.12);
+  --success-color: #6b8f5e;
+  --warning-color: #c4956a;
 }
 
 [data-theme="dark"] {
-  --bg-color: #0a0e16;
-  --bg-alt: #111827;
-  --text-color: #e5e7eb;
-  --text-secondary: #d1d5db;
-  --text-light: #9ca3af;
-  --nav-bg: #111827;
-  --nav-shadow: rgba(0, 0, 0, 0.5);
-  --card-bg: #111827;
-  --card-shadow: rgba(0, 0, 0, 0.3);
-  --border-color: #1f2937;
-  --accent-color: #8b5cf6;
-  --accent-hover: #9f7aea;
-  --accent-light: rgba(139, 92, 246, 0.15);
-  --success-color: #38a169;
-  --warning-color: #dd6b20;
+  --bg-color: #1a1a18;
+  --bg-alt: #222220;
+  --text-color: #e0ddd8;
+  --text-secondary: #c4bfb8;
+  --text-light: #908b84;
+  --nav-bg: #222220;
+  --nav-shadow: rgba(0, 0, 0, 0.4);
+  --card-bg: #2a2a28;
+  --card-shadow: rgba(0, 0, 0, 0.25);
+  --border-color: #3a3a36;
+  --accent-color: #9aab8e;
+  --accent-hover: #adbfa3;
+  --accent-light: rgba(154, 171, 142, 0.15);
+  --success-color: #7a9e6d;
+  --warning-color: #d4a574;
 }
 
 /* Apply theme to body and html */
@@ -53,18 +53,8 @@ html::before {
   background: linear-gradient(135deg, 
     var(--bg-color) 0%, 
     var(--bg-alt) 50%, 
-    #c4c8d1 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+    #e0d8cf 100%);
   z-index: -1;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-  background-size: 20px 20px;
-}
-
-[data-theme="dark"] html::before {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
 }
 
 html {
@@ -89,7 +79,7 @@ body {
   box-sizing: border-box;
 }
 
-*:not(.projects-scroll-container) {
+* {
   max-width: 100%;
 }
 
@@ -125,32 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 0.1s ease-out;
 }
 
-/* Disable highlighting and selection */
-* {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
-}
 
-/* Disable image dragging */
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  pointer-events: none;
-}
-
-/* Hide scrollbars when DevTools might be open */
-@media screen and (max-height: 500px) {
-  body {
-    filter: blur(3px);
-    pointer-events: none;
-  }
-}
 
 /* Main content styling */
 .main-content {
@@ -221,7 +186,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid var(--accent-color);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 4px 15px rgba(122, 143, 110, 0.15);
 }
 
 .profile-image img {
@@ -245,7 +210,7 @@ img {
 
 .social-icon:hover {
   color: var(--accent-hover);
-  background-color: rgba(102, 126, 234, 0.15);
+  background-color: var(--accent-light);
   transform: translateY(-2px);
 }
 
@@ -307,14 +272,14 @@ img {
   background-color: var(--card-bg);
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   border-color: var(--accent-color);
 }
 
@@ -390,88 +355,44 @@ img {
 }
 
 /* Projects section styles */
-.projects-carousel {
-  position: relative;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding: 0 60px; /* Add padding to make room for buttons */
-}
-
-.projects-scroll-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  max-width: 100%;
-}
-
-.projects-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
-}
-
 .projects-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2rem;
   padding: 1rem 0;
-  min-width: fit-content;
+  max-width: 1000px;
+  margin: 2rem auto 0;
 }
 
 .project-card {
   background-color: var(--card-bg);
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+  padding: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  flex: 0 0 400px; /* Fixed width for consistent card sizes */
-  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   border-color: var(--accent-color);
 }
 
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--accent-color, #BF9B9F);
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+.project-card-accent {
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
 }
 
-.scroll-btn:hover {
-  background: var(--accent-hover, #a68a8d);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+.project-card-body {
+  padding: 1.75rem;
+  flex: 1;
 }
 
-.scroll-btn-left {
-  left: 6px;
-}
 
-.scroll-btn-right {
-  right: 6px;
-}
-
-.scroll-btn svg {
-  width: 24px;
-  height: 24px;
-}
 
 .project-header {
   display: flex;
@@ -497,11 +418,11 @@ img {
 .project-tech span {
   background-color: var(--accent-light);
   color: var(--accent-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid var(--border-color);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .project-links {
@@ -513,10 +434,10 @@ img {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
@@ -586,32 +507,9 @@ img {
   }
   
   /* Projects mobile styles */
-  .projects-carousel {
-    margin: 1rem auto 0;
-  }
   
-  .scroll-btn {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .scroll-btn-left {
-    left: -20px;
-  }
-  
-  .scroll-btn-right {
-    right: -20px;
-  }
-  
-  .scroll-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .project-card {
-    flex: 0 0 320px; /* Smaller cards on mobile */
-    padding: 1.5rem;
-    min-height: 280px;
+  .project-card-body {
+    padding: 1.25rem;
   }
   
   .project-header {
@@ -627,46 +525,41 @@ img {
 
 /* Resume section styles */
 .resume-section-container {
-  max-width: 80vw !important;
+  max-width: 800px !important;
   width: 100% !important;
 }
 
 .resume-container {
   margin-top: 2rem;
-  max-width: 95vw;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
   background-color: var(--card-bg);
   border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px var(--card-shadow);
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resume-viewer {
-  background-color: var(--bg-color);
   border-radius: 8px;
-  padding: 0;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--border-color);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: #fff;
+}
+
+[data-theme="dark"] .resume-viewer {
+  background-color: #333;
 }
 
 .resume-viewer iframe {
-  border-radius: 4px;
+  display: block;
   border: none;
   width: 100%;
-  height: 800px;
-  transform: scale(1.1);
-  transform-origin: top left;
-  margin: -5%;
-  background-color: transparent;
+  height: 700px;
 }
 
-.resume-download {
+.resume-actions {
   text-align: center;
+  margin-top: 1.25rem;
 }
 
 .download-btn {
@@ -674,22 +567,16 @@ img {
   background-color: var(--accent-color);
   color: white;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
   font-weight: 500;
   transition: all 0.3s ease;
-  margin-top: 1rem;
 }
 
 .download-btn:hover {
   background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
-}
-
-.download-btn:active {
-  background-color: #8F6669;
-  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(122, 143, 110, 0.2);
 }
 
 /* Mobile responsiveness for resume */
@@ -697,17 +584,11 @@ img {
   .resume-section-container {
     max-width: 95vw !important;
   }
-  
-  .resume-viewer {
-    padding: 0.25rem;
-  }
-  
+
   .resume-viewer iframe {
-    height: 600px;
-    transform: scale(1.05);
-    margin: -2.5%;
+    height: 500px;
   }
-  
+
   .download-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
@@ -716,52 +597,8 @@ img {
 
 @media (max-width: 480px) {
   .resume-viewer iframe {
-    height: 500px;
-    transform: scale(1.02);
-    margin: -1%;
+    height: 400px;
   }
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Dark mode specific overrides for better contrast */
-[data-theme="dark"] .project-tech span {
-  background-color: var(--accent-light);
-  color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
 [data-theme="dark"] .social-icon {
@@ -769,5 +606,5 @@ img {
 }
 
 [data-theme="dark"] .social-icon:hover {
-  background-color: rgba(139, 92, 246, 0.25);
+  background-color: rgba(154, 171, 142, 0.25);
 }

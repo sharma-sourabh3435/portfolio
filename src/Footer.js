@@ -33,6 +33,7 @@ function Footer() {
         </div>
         <div className="footer-credit">
           <p>Made by me</p>
+          <p className="vibe-coded">✦ vibe coded ✦</p>
         </div>
       </div>
     </footer>

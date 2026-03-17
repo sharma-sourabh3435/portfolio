@@ -55,6 +55,14 @@
   font-style: italic;
 }
 
+.footer-credit .vibe-coded {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.35rem;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .footer-container {

@@ -2,7 +2,6 @@ import './App.css';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Chatbot from './Chatbot';
-// import './protection.js';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -20,21 +19,6 @@ function App() {
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
-  const scrollProjects = (direction) => {
-    const container = document.querySelector('.projects-scroll-container');
-    const scrollAmount = 400; // Adjust this value to control scroll distance
-    
-    if (container) {
-      const scrollLeft = direction === 'left' 
-        ? container.scrollLeft - scrollAmount 
-        : container.scrollLeft + scrollAmount;
-      
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth'
-      });
-    }
-  };
   const resume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/view?usp=drive_link";
   const iFrameResume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/preview";
 
@@ -143,20 +127,10 @@ function App() {
         <section id="projects" className="section">
           <div className="container">
             <h2>Projects</h2>
-            <div className="projects-carousel">
-              <button 
-                className="scroll-btn scroll-btn-left" 
-                onClick={() => scrollProjects('left')}
-                aria-label="Scroll left"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                </svg>
-              </button>
-              
-              <div className="projects-scroll-container">
-                <div className="projects-grid">
+            <div className="projects-grid">
                   <div className="project-card">
+                    <div className="project-card-accent"></div>
+                    <div className="project-card-body">
                     <div className="project-header">
                       <div className="project-title">
                         <h3>Algorithmic Trader</h3>
@@ -186,8 +160,11 @@ function App() {
                       <li>Utilized Keras and TensorFlow to develop and fine-tune deep learning models, leading to a 15% improvement in pattern recognition accuracy for market trends</li>
                     </ul>
                   </div>
+                  </div>
 
                   <div className="project-card">
+                    <div className="project-card-accent"></div>
+                    <div className="project-card-body">
                     <div className="project-header">
                       <div className="project-title">
                         <h3>GigsNow</h3>
@@ -213,65 +190,31 @@ function App() {
                       <li>Spearheaded the design and development of 'GigsNow', an Android application in Android Studio using Java, aimed at streamlining job discovery and listings for users</li>
                       <li>Engineered advanced job searching, posting, and application submission functionalities, resulting in a 30% growth in user engagement and interaction</li>
                     </ul>
-                  </div>
-
-                  {/* You can add more project cards here */}
-                  <div className="project-card">
-                    <div className="project-header">
-                      <div className="project-title">
-                        <h3>More Projects Coming Soon</h3>
-                        <div className="project-tech">
-                          <span>React</span>
-                          <span>Node.js</span>
-                          <span>AI/ML</span>
-                        </div>
-                      </div>
                     </div>
-                    <ul className="project-list">
-                      <li>Stay tuned for more exciting projects!</li>
-                      <li>Always working on something new and innovative</li>
-                    </ul>
                   </div>
                 </div>
-              </div>
-
-              <button 
-                className="scroll-btn scroll-btn-right" 
-                onClick={() => scrollProjects('right')}
-                aria-label="Scroll right"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </button>
-            </div>
           </div>
         </section>
         
         <section id="resume" className="section">
           <div className="container resume-section-container">
             <h2>Resume</h2>
-            <p>View or download my resume here.</p>
             <div className="resume-container">
               <div className="resume-viewer">
                 <iframe
                   src={iFrameResume}
-                  width="100%"
-                  height="600"
                   title="Resume PDF"
                   allowFullScreen
-                >
-                  <p>Your browser does not support PDFs. <a href={resume}>Download the PDF</a>.</p>
-                </iframe>
+                />
               </div>
-              <div className="resume-download">
+              <div className="resume-actions">
                 <a 
                   href={resume} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="download-btn"
                 >
-                  Download Resume
+                  View Full Resume
                 </a>
               </div>
             </div>
