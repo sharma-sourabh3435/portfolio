@@ -128,72 +128,74 @@ function App() {
         <section id="projects" className="section">
           <div className="container">
             <h2>Projects</h2>
-            <div className="projects-grid">
-                  <div className="project-card">
-                    <div className="project-card-accent"></div>
-                    <div className="project-card-body">
-                    <div className="project-header">
-                      <div className="project-title">
-                        <h3>Algorithmic Trader</h3>
-                        <div className="project-tech">
-                          <span>Python</span>
-                          <span>Pandas</span>
-                          <span>Numpy</span>
-                          <span>Keras</span>
-                          <span>TensorFlow</span>
-                          <span>Git</span>
-                          <span>Docker</span>
+            <div className="projects-marquee">
+              <div className="projects-track">
+                {[...Array(2)].map((_, setIndex) => (
+                  <div className="projects-set" key={setIndex} aria-hidden={setIndex > 0}>
+                    {[
+                      {
+                        title: 'Distributed Job Scheduler',
+                        tech: ['Go', 'SQLite'],
+                        link: 'https://github.com/sharma-sourabh3435/job-scheduler',
+                        bullets: [
+                          'Engineered distributed job scheduler with REST API, fault-tolerant worker nodes, and automatic job reassignment, achieving high reliability under concurrent load',
+                          'Implemented concurrent job queues with goroutines and channels, ensuring thread-safe operations with mutex-based synchronization and persistent database storage',
+                        ],
+                      },
+                      {
+                        title: 'Algorithmic Trader',
+                        tech: ['Python', 'Pandas', 'Numpy', 'Keras', 'TensorFlow', 'Git', 'Docker'],
+                        link: 'https://github.com/sharma-sourabh3435/ready_trader_go',
+                        bullets: [
+                          'Leveraged advanced data analysis techniques utilizing Pandas and Numpy, resulting in a 20% boost in predictive accuracy when processing and analyzing large datasets',
+                          'Utilized Keras and TensorFlow to develop and fine-tune deep learning models, leading to a 15% improvement in pattern recognition accuracy for market trends',
+                        ],
+                      },
+                      {
+                        title: 'GigsNow',
+                        tech: ['Java', 'Android Studio', 'Firebase', 'Git'],
+                        link: 'https://github.com/sharma-sourabh3435/Odd-Jobs',
+                        bullets: [
+                          "Spearheaded the design and development of 'GigsNow', an Android application in Android Studio using Java, aimed at streamlining job discovery and listings for users",
+                          'Engineered advanced job searching, posting, and application submission functionalities, resulting in a 30% growth in user engagement and interaction',
+                        ],
+                      },
+                    ].map((project, i) => (
+                      <div className="project-card" key={i}>
+                        <div className="project-card-accent"></div>
+                        <div className="project-card-body">
+                          <div className="project-header">
+                            <div className="project-title">
+                              <h3>{project.title}</h3>
+                              <div className="project-tech">
+                                {project.tech.map((t) => (
+                                  <span key={t}>{t}</span>
+                                ))}
+                              </div>
+                            </div>
+                            <div className="project-links">
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-link"
+                              >
+                                [code]
+                              </a>
+                            </div>
+                          </div>
+                          <ul className="project-list">
+                            {project.bullets.map((b, j) => (
+                              <li key={j}>{b}</li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                      <div className="project-links">
-                        <a 
-                          href="https://github.com/sharma-sourabh3435/ready_trader_go" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="project-link"
-                        >
-                          [code]
-                        </a>
-                      </div>
-                    </div>
-                    <ul className="project-list">
-                      <li>Leveraged advanced data analysis techniques utilizing Pandas and Numpy, resulting in a 20% boost in predictive accuracy when processing and analyzing large datasets</li>
-                      <li>Utilized Keras and TensorFlow to develop and fine-tune deep learning models, leading to a 15% improvement in pattern recognition accuracy for market trends</li>
-                    </ul>
+                    ))}
                   </div>
-                  </div>
-
-                  <div className="project-card">
-                    <div className="project-card-accent"></div>
-                    <div className="project-card-body">
-                    <div className="project-header">
-                      <div className="project-title">
-                        <h3>GigsNow</h3>
-                        <div className="project-tech">
-                          <span>Java</span>
-                          <span>Android Studio</span>
-                          <span>Firebase</span>
-                          <span>Git</span>
-                        </div>
-                      </div>
-                      <div className="project-links">
-                        <a 
-                          href="https://github.com/sharma-sourabh3435/Odd-Jobs" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="project-link"
-                        >
-                          [code]
-                        </a>
-                      </div>
-                    </div>
-                    <ul className="project-list">
-                      <li>Spearheaded the design and development of 'GigsNow', an Android application in Android Studio using Java, aimed at streamlining job discovery and listings for users</li>
-                      <li>Engineered advanced job searching, posting, and application submission functionalities, resulting in a 30% growth in user engagement and interaction</li>
-                    </ul>
-                    </div>
-                  </div>
-                </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
         
