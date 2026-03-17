@@ -19,8 +19,9 @@ function App() {
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
-  const resume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/view?usp=drive_link";
-  const iFrameResume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/preview";
+  // const resume = "https://drive.google.com/file/d/1F9P_pr0K6HF1D6lkitrZE1-oeutFQuQR/view?usp=drive_link";
+  const resume = "https://drive.google.com/file/d/1JjfFJosl9xS_dNqnyh1rMCdJodli_KIz/view?usp=sharing";
+  const iFrameResume = "https://drive.google.com/file/d/1JjfFJosl9xS_dNqnyh1rMCdJodli_KIz/preview";
 
   return (
     <div className="App">
